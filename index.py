@@ -7,7 +7,7 @@ api = flask_restful.Api(app)
 
 class HelloWorld(flask_restful.Resource):
     def get(self):
-        return {'hello': 'world'}
+        return {'hello': 'world CI in heroku!'}
 
 api.add_resource(HelloWorld, '/')
 
