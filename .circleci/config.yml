@@ -56,13 +56,13 @@ jobs:
           command: |
             docker build -t 234988943857.dkr.ecr.us-east-1.amazonaws.com/portal-frontend .
             aws ecr get-login --region us-east-1
-            
+
       # Deploy Docker Image to AWS
       - deploy:
           name: Deploy to S3 if tests pass and branch is Master
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              <your-deploy-commands>
+              git push heroku master
             else
               echo "Not master branch so not deploying"
             fi
