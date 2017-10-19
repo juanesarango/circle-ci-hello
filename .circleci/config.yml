@@ -59,7 +59,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git push --force git@heroku.com:portal-master-api.git HEAD:refs/heads/master
             elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
-              git push --force git@heroku.com:portal-master-api-stanging.git HEAD:refs/heads/staging
+              git push --force git@heroku.com:portal-master-api-staging.git HEAD:refs/heads/staging
             else
-              echo "Not master branch so not deploying"
+              echo "Not master branch nor staging barnch, so not deploying."
             fi
