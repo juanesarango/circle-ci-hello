@@ -73,9 +73,9 @@ jobs:
       #       heroku:
       #         appname: portal-master-api
       - run: bash .circleci/setup-heroku.sh
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - "48:a0:87:54:ca:75:32:12:c6:9e:a2:77:a4:7a:08:a4"
+      - add_ssh_keys:
+          fingerprints:
+            - "73:eb:7a:7b:43:69:71:3c:79:67:4a:fd:aa:8e:00:00"
       - deploy:
           name: Deploy Master to Heroku
           command: |
