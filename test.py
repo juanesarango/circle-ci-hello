@@ -9,7 +9,7 @@ class TestFlaskApi(unittest.TestCase):
 
     def test_hello_world(self):
         response = self.app.get('/')
-        self.assertEqual(json.loads(response.get_data()), {'hello': 'world'})
+        self.assertEqual(json.loads(response.get_data()), {'hello': 'world CI in heroku!'})
 
 if __name__ == '__main__':
     unittest.main()
