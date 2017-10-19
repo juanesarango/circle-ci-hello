@@ -75,7 +75,7 @@ jobs:
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
           fingerprints:
-            - "8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad"
+            - "4c:b0:b1:c3:17:0d:bf:e1:29:92:da:aa:85:fe:63:e9"
       - deploy:
           name: Deploy Master to Heroku
           command: |
