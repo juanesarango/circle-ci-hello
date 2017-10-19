@@ -66,9 +66,23 @@ jobs:
       #       else
       #         echo "Not master branch so not deploying"
       #       fi
-      - deployment:
-          name: deployment to heroku
-          staging:
-            branch: master
-            heroku:
-              appname: portal-master-api
+      # - deployment:
+      #     name: deployment to heroku
+      #     staging:
+      #       branch: master
+      #       heroku:
+      #         appname: portal-master-api
+      - run: bash .circleci/setup-heroku.sh
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - "48:a0:87:54:ca:75:32:12:c6:9e:a2:77:a4:7a:08:a4"
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push --force git@heroku.com:portal-master-api.git HEAD:refs/heads/master
+              heroku run python index.py
+              heroku restart
+            else
+              echo "Not master branch so not deploying"
+            fi
