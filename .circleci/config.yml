@@ -50,12 +50,12 @@ jobs:
           path: test-reports
           destination: test-reports
 
-      # build docker image
-      - run: 
-          name: build docker image
-          command: |
-            docker build -t 234988943857.dkr.ecr.us-east-1.amazonaws.com/portal-frontend .
-            aws ecr get-login --region us-east-1
+      # # build docker image
+      # - run: 
+      #     name: build docker image
+      #     command: |
+      #       docker build -t 234988943857.dkr.ecr.us-east-1.amazonaws.com/portal-frontend .
+      #       aws ecr get-login --region us-east-1
 
       # Deploy Docker Image to AWS
       - deploy:
